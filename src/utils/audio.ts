@@ -323,7 +323,7 @@ class SoundEngine {
 
   // --- BACKGROUND MUSIC SYNTHESIZER ---
 
-  /** Starts gentle, cheerful, marimba melody loop */
+  /** Starts a gentle, satisfying ambient melody loop */
   startMusic(enabled = true) {
     if (!enabled || this.isMusicPlaying) return;
     const ctx = this.getContext();
@@ -332,15 +332,15 @@ class SoundEngine {
     this.isMusicPlaying = true;
     this.musicStep = 0;
 
-    // Marimba sequence in C Major / Pentatonic (cheerful and calm for kids)
+    // Simple, satisfying ambient pentatonic sequence (Cmaj, Fmaj, Gmaj, Fmaj)
     const melody = [
-      261.63, 329.63, 392.00, 523.25, 392.00, 329.63, 440.00, 392.00,
-      349.23, 392.00, 440.00, 523.25, 440.00, 392.00, 329.63, 293.66,
-      261.63, 392.00, 329.63, 392.00, 523.25, 440.00, 392.00, 329.63,
-      293.66, 329.63, 349.23, 392.00, 523.25, 392.00, 261.63, 0,
+      261.63, 329.63, 392.00, 523.25, // C E G C
+      349.23, 440.00, 523.25, 659.25, // F A C E
+      392.00, 493.88, 587.33, 783.99, // G B D G
+      349.23, 440.00, 523.25, 659.25, // F A C E
     ];
 
-    const stepInterval = 280; // ms per note
+    const stepInterval = 450; // ms per note - slower and more satisfying
 
     const playNext = () => {
       if (!this.isMusicPlaying) return;
@@ -352,18 +352,19 @@ class SoundEngine {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
 
-        osc.type = 'sine';
+        osc.type = 'sine'; // Pure, satisfying ambient tone
         osc.frequency.setValueAtTime(freq, t);
 
-        // Gentle soft marimba envelope
-        gain.gain.setValueAtTime(0.05, t);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+        // Soft attack, long satisfying fade
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.06, t + 0.1); 
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 1.2); 
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
 
         osc.start(t);
-        osc.stop(t + 0.3);
+        osc.stop(t + 1.3);
       }
 
       this.musicTimer = window.setTimeout(playNext, stepInterval);

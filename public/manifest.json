@@ -1,0 +1,35 @@
+{
+  "name": "Smash Learn & Play",
+  "short_name": "SmashLearn",
+  "start_url": "/",
+  "scope": "/",
+  "id": "smash-learn-play",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#d1d9f6",
+  "theme_color": "#6c5ce7",
+  "description": "SMASH LEARN & PLAY is an interactive educational game for kids to learn letters, words, numbers, and colours.",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "games", "kids"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
