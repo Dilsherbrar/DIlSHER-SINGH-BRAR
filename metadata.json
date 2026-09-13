@@ -1,0 +1,7 @@
+{
+  "name": "SMASH LEARN & PLAY",
+  "description": "A fun, colourful, interactive alphabet educational game for children by Vyronix Coder Ltd.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

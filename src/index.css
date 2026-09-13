@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Cartoon 3D Button Shadows */
+  .btn-cartoon-orange {
+    background: linear-gradient(180deg, #ff9f43 0%, #ee5253 100%);
+    box-shadow: 0 8px 0 #b33939, 0 15px 20px rgba(0,0,0,0.25);
+  }
+  .btn-cartoon-orange:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #b33939, 0 8px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn-cartoon-green {
+    background: linear-gradient(180deg, #2ed573 0%, #10ac84 100%);
+    box-shadow: 0 8px 0 #0b785c, 0 15px 20px rgba(0,0,0,0.25);
+  }
+  .btn-cartoon-green:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #0b785c, 0 8px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn-cartoon-blue {
+    background: linear-gradient(180deg, #54a0ff 0%, #2e86de 100%);
+    box-shadow: 0 8px 0 #1b4f85, 0 15px 20px rgba(0,0,0,0.25);
+  }
+  .btn-cartoon-blue:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #1b4f85, 0 8px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn-cartoon-purple {
+    background: linear-gradient(180deg, #a55eea 0%, #8854d0 100%);
+    box-shadow: 0 8px 0 #5f27cd, 0 15px 20px rgba(0,0,0,0.25);
+  }
+  .btn-cartoon-purple:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #5f27cd, 0 8px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn-cartoon-yellow {
+    background: linear-gradient(180deg, #fed330 0%, #f7b731 100%);
+    box-shadow: 0 8px 0 #d98020, 0 15px 20px rgba(0,0,0,0.25);
+  }
+  .btn-cartoon-yellow:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #d98020, 0 8px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Cartoon text stroke */
+  .text-stroke-sm {
+    -webkit-text-stroke: 2px #2d3436;
+  }
+  .text-stroke-md {
+    -webkit-text-stroke: 3px #2d3436;
+  }
+  .text-stroke-lg {
+    -webkit-text-stroke: 5px #2d3436;
+  }
+  .text-stroke-white {
+    -webkit-text-stroke: 3px #ffffff;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes idleBox {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes tapHand {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-12px) scale(1.08); }
+  60% { transform: translateY(4px) scale(0.95); }
+}
+
+@keyframes starSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.5s ease-in-out infinite;
+}
+
+.animate-idle-box {
+  animation: idleBox 2.5s ease-in-out infinite;
+}
+
+.animate-tap-hand {
+  animation: tapHand 1.4s ease-in-out infinite;
+}
+
+.animate-star-spin {
+  animation: starSpin 6s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean app experience */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
